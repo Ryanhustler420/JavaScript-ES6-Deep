@@ -127,13 +127,100 @@ const key = 'abc123';
 
 ```
 
+## let vs const
+
+**you cannot declare two let variable like var keyword**
+
+```javaScript
+
+let points = 50;
+let points = 60;  //Uncaught SyntaxError: Identifier 'points' has already been declared
+
+```
+
+> but you can update them
+
+```javaScript
+
+let points = 50;
+points = 60;
+
+```
+
+> we can declear same variable name inside block of code and that won't affect the code at all
+
+```javaScript
+
+let points = 50;
+let winner = false;
+
+if(points > 40){
+  console.log("it ran");
+  let winner = true; //inside a block wont affect outside scope variable but var can
+}
+
+console.log(winner);
+
+//output
+  // it ran1
+  // false
+
+```
+
+## const variable cannot be updated but let variable can
+
+```javaScript
+
+const key = 'abc1230';
+
+key = 'change'
+
+// Uncaught TypeError: Assignment to constant variable.
+
+```
+
+> something poople think const is muteable
+
+```javaScript
+
+const person = {
+  name:'wes',
+  age:28
+}
+
+//try to update that
+
+person = {name:"Gaurav"} //TypeError: Assignment to constant variable.
+
+//NOTE: you cannot do that const variable is not meant for reassigning
+
+
+```
+
+**but a property of a const variable can change**
+
+```javaScript
+
+person.name = "Gaurav";
+person.age = 20;
+
+console.log(person); //{name: "Gaurav", age: 20}
+
+
+```
+
+>  but you can freeze object by using
+
+```javaScript
+
+const wes = Object.freeze(person);
+
+wes.name = "saurav" // try to assign new value
+console.log(wes); // {name: "Gaurav", age: 20}
 
 
 
-
-
-
-
+```
 
 
 
