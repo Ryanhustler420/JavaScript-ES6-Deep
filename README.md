@@ -345,7 +345,7 @@ var pizza = 'Cool Dish';
 console.log(pizza);
 const pizza = 'Cool Dish';
 
-// output :- Identifier 'pizza' has already been declared
+// output :- ReferenceError: hello is not defined
 
 ```
 
