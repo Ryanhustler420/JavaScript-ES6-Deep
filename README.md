@@ -223,10 +223,96 @@ console.log(wes); // {name: "Gaurav", age: 20}
 ```
 
 
+## let and const is real world
+
+> Replacement of IIFE help us not to leak information
+
+```javaScript
 
 
+var name = 'wes';
 
+//it wont leak name property to global scope
+(function(){
+  var name = 'gaurav';
+  console.log(name);
+})();
 
+console.log(name); //wes
+//not gaurav because that's inside the IIFE block
+
+```
+
+## const is a block level variable
+
+```javaScript
+
+//since const is a block level scope of variable
+
+{
+  const name = "GauravGupta";
+}
+
+console.log(name); // ""
+
+```
+
+> another good example of let and const is for loop 
+
+```javaScript
+
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+// output -> 1 2 3 4 5 6 7 8 9
+
+// But we can still use var i
+
+console.log(i); // 10
+
+```
+>  to solve this problem we can use let keyword in for loop
+
+``Use Let Keyword in for loop``
+```javaScript
+
+for (let j = 0; j < 10; j++) {
+  console.log(j);
+}
+
+//we cannot access let j because that inside the block of for loop
+
+console.log(j); //ReferenceError: j is not defined
+
+```
+
+> var keyword example
+
+```javScript
+
+//example var
+for (var j = 0; j < 10; j++) {
+  console.log(j);
+  setTimeout(() =>{
+      console.log(j); //10
+  },2000);
+}
+
+```
+
+> let keyword example
+
+```javScript
+
+for (let j = 0; j < 10; j++) {
+  console.log(j); // 0 1 2 3 4 5 6 7 8 9
+  setTimeout(() =>{ // after 2 second
+      console.log(j); // 0 1 2 3 4 5 6 7 8 9
+  },2000);
+}
+
+```
 
 
 
