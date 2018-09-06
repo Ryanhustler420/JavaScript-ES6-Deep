@@ -448,8 +448,33 @@ sayMyName("Hey gupta");
 
 ```
 
+## lets look at couple of more example of Arrow function
 
 
+> implicit return with object litral
+
+```javaScript
+
+const Race = '100m Dash';
+const Winner = ['Hunter Gate','Singa Song','Imda Bos'];
+
+const Win = Winner.map((Winner,i) => ({name:Winner,race:Race,place:i+1}));
+
+console.table(Win);
+
+```
+
+> filtering array using arrow function
+
+```javaScript
+
+const ages = [23,62,45,234,2,65,324,654,12];
+
+const old = ages.filter(age => age >= 60);
+
+console.log(old);
+
+```
 
 
 
