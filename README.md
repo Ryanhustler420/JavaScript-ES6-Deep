@@ -289,7 +289,7 @@ console.log(j); //ReferenceError: j is not defined
 
 > var keyword example
 
-```javScript
+```javaScript
 
 //example var
 for (var j = 0; j < 10; j++) {
@@ -303,7 +303,7 @@ for (var j = 0; j < 10; j++) {
 
 > let keyword example
 
-```javScript
+```javaScript
 
 for (let j = 0; j < 10; j++) {
   console.log(j); // 0 1 2 3 4 5 6 7 8 9
