@@ -342,8 +342,8 @@ var pizza = 'Cool Dish';
 
 ```javaScript
 
-console.log(pizza);
-const pizza = 'Cool Dish';
+console.log(hello);
+const hello = 'Cool Dish';
 
 // output :- ReferenceError: hello is not defined
 
