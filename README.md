@@ -349,12 +349,104 @@ const hello = 'Cool Dish';
 
 ```
 
+##  Arrow Function
+
+```javaScript
+
+const names = ['wes','kait','lux'];
+
+```
+
+> Arrows is a new syntax for functions, which brings several benefits:
+
+- Arrow syntax automatically binds this to the surrounding code’s context
+- The syntax allows an implicit return when there is no body block, resulting in shorter and simpler code in some cases
+- Last but not least, => is shorter and simpler than function, although stylistic issues are often subjective
+
+```javaScript
+
+//name function
+
+const fullNames = names.map(function(name){
+  return `${name} bos`;
+});
+
+console.log(fullNames);
+
+```
+
+``rewrite it as arrow function``
+- explicit return where we write return keyword
+
+```javaScript
+
+const fullNames = names.map((name) => {
+  return `${name} bos`;
+});
+
+console.log(fullNames);
+
+// OR if you have only one args
+
+const fullNames = names.map(name => {
+  return `${name} bos`;
+});
+
+console.log(fullNames);
 
 
+```
+
+``more simpler``
+
+- if you have one statement to return
+- with Implicit return
+
+```javaScript
+
+const fullNames = names.map(name => `${name} bos`);
+
+console.log(fullNames);
+
+```
+
+**ES6 arrow functions are anynoumos function meaning running without blocking other function execution**
+
+```
+
+Name functions
+it help us for stack trace like if somthing went wrong so the logger
+will let us know were the line number is.
+
+```
 
 
+```javaScript
+
+function sayMyName(name){
+  alear(`hello ${name}`)
+}
+
+sayMyName("Gaurav")
 
 
+```
+> if you using Arrow function you cannot name them at all but you can store them inside a variable name
+
+``Example``
+
+
+```javaScript
+
+const sayMyName = (name) => {
+  alert(`Hello ${name}`)
+}
+
+sayMyName("Hey gupta");
+
+//NOTE: this wont give you stack trace be carefull
+
+```
 
 
 
