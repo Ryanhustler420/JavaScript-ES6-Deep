@@ -314,6 +314,40 @@ for (let j = 0; j < 10; j++) {
 
 ```
 
+## Temporal Dead Zone
+
+
+```javaScript
+
+var pizza = 'Deep Dish';
+console.log(pizza);
+
+// output : Deep Dish
+
+
+```
+
+
+```javaScript
+
+console.log(pizza);
+var pizza = 'Cool Dish';
+
+// output : undefine
+// because with var keyword we can access the variable before we declear it
+
+```
+
+> Simple fix use const keyword
+
+```javaScript
+
+console.log(pizza);
+const pizza = 'Cool Dish';
+
+// output :- Identifier 'pizza' has already been declared
+
+```
 
 
 
