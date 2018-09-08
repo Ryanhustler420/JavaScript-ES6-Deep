@@ -611,5 +611,29 @@ orderChildren('jill','gaurav','amit');
 
 > more code available in fat arraw function ES6 repos
 
+## Template Strings Introduction
 
+This is kinda pain in the Ass to concatenate string and variable 
+problem is if we forgot to put + sign anywere that would be not nice.
+
+``Example``
+
+```javaScript
+
+var name = 'Snickers';
+var age = 2;
+var sentence = 'My dog '+ name + ' is ' + age *7 + 'years old.';
+
+console.log(sentence);
+
+//simple fix is use template string
+
+// template string and templete litral
+// use backtiks
+
+var sentence = `My dog ${name} is ${age *7} years old.`;
+
+console.log(sentence);
+
+```
 
