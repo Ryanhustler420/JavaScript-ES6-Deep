@@ -476,11 +476,140 @@ console.log(old);
 
 ```
 
+## Default function arguments
+
+```javaScript
+
+function calculateBill(total,tax,tip){
+    return total + (total * tax) + (total * tip);
+}
+
+// const totalBill = calculateBill(100); <--undefined
+// const totalBill = calculateBill(100,0.13,0.15); <- you have to do this
 
 
+```
+
+``Simple Fix```
+
+```javaScript
+
+function calculateBill(total,tax = 0.13,tip = 0.15){
+    return total + (total * tax) + (total * tip);
+}
+
+const totalBill = calculateBill(100,undefined,0.15); // pass
+
+// here argument order does metter but as you will learn 
+// object distructring than you can put args as any order as you want
+
+```
+
+## Why Not Use an Arrow Function
+
+> When you need a method to bind to an object
+
+```javaScript
+
+const person = {
+    points:23,
+    score(){ // this is where you can bind properties of 
+             // an object which cannot be achive by fat Arrow Function
+        console.log(this);
+        this.points++;
+    }
+}
+
+console.log(person);
+person.score();
+person.score();
+person.score();
+person.score();
+console.log(person);
+
+```
+
+- When you need to add a prototype method
+- this is simply just the process of adding methods or properties to an object 
+- after the object is created
+
+```javaScript
+
+class Car{
+    constructor(make,colour){
+        this.make = make;
+        this.colour = color;
+    }
+}
 
 
+const beemer = new Car('bmw','blue');
+const alfa = new Car('alfa','white');
 
+
+Car.prototype.summarize = () => {
+    return `This car is a ${this.make} in the colour ${this.colour}`;
+};
+
+// this above method will give undefine output 
+
+
+beemer.summarize()
+// This car is a undefined in the colour undefined
+// because this is fat arrow function
+
+```
+``simple fix``
+
+```javaScript
+
+// use simple function for binding this keyword with the current context
+
+Car.prototype.summarize = function(){
+    return `This car is a ${this.make} in the colour ${this.colour}`;
+}
+
+beemer.summarize();
+// This car is a beemer in the colour blue
+
+```
+When you need arguments object 
+arguments -> is a keyword in javaScript which can fetch args from function 
+Eventhough you dont have formal args
+
+
+```javaScript
+
+const orderChildren = () => {
+    const children = Array.from(arguments);
+    return children.map((child,i) => {
+        return `${child} was child #${i+1}`;
+    })
+    console.log(arguments); 
+}
+
+orderChildren('jill','gaurav','amit');
+// this function will throw an error because of arrow function
+
+```
+
+``simple fix``
+
+```javaScript
+
+const orderChildren = function(){
+    const children = Array.from(arguments);
+    return children.map((child,i) => {
+        return `${child} was child #${i+1}`;
+    })
+    console.log(arguments); 
+}
+orderChildren('jill','gaurav','amit');
+// jill was child #1,gaurav was child #2,amit was child #3 
+
+```
+
+> more code available in fat arraw function ES6 repos
 
 
 
