@@ -637,3 +637,130 @@ console.log(sentence);
 
 ```
 
+## Creating HTML fragments with Template Literals
+
+> it allow us to do multiple line without any funny business. for Example
+
+```javaScript
+var text = "hello there, \
+  how are you  \
+";
+# so puting '\' each line is like adding some more task, so instead
+```
+
+``use``
+
+```javaScript
+  
+   const person = {
+    name: 'Gaurav',
+    job : 'Programmer',
+    city: 'Hamilton',
+    bio: 'Gaurav is a really cool guy that loves to teach programming!'
+   };
+
+
+  const markup = `
+    <div class="person">
+      <h2>
+        ${person.name}
+        <span class="job">${person.job}</span>
+      </h2>
+      <p class="location">${person.city}</p>
+      <p class="bio">${person.bio}</p>
+    </div>
+  `
+  console.log(markup);
+  
+  document.body.innerHTML = markup;
+```
+> you can neast them inside of each other
+
+```javaScript
+
+const dogs = [
+  {name: 'Snikkers', age: 2},
+  {name: 'Hugo', age: 8},
+  {name: 'Sunny', age: 1}
+]
+
+const markup = `
+    <ul class="dogs">
+      ${dogs.map(dog => `<li>${dog.name} is ${dog.age * 7} years old.</li>`).join('')}
+    </ul>
+`;
+
+console.log(markup);
+document.body.innerHTML = markup;
+
+```
+
+> You can write if statement inside template String
+
+```javaScript
+
+  const song = {
+    name: 'Dying to live',
+    artist: 'Tupac',
+    featuring: 'Biggie Smalls'
+  }
+
+  const markup = `
+    <div class="song">
+      <p>
+        ${song.name} - ${song.artist}
+        ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+      </p>
+    </div>
+  `
+  
+  document.body.innerHTML = markup;
+```
+
+```javaScript
+
+  const song = {
+    name: 'Dying to live',
+    artist: 'Tupac',
+    featuring: ['Biggie Smalls','Eminem','Snoop dog']
+  }
+  
+  
+  function renderFeaturing(featuring) {
+    return `
+      <ul>
+        ${featuring.map(feature => `<li>{feature}</li>`).join('')}
+      </ul>
+    `
+  }
+
+  const markup = `
+    <div class="song">
+      <p>
+        ${song.name} - ${song.artist}
+        ${song.featuring ? renderFeaturing(song.featuring) : ''}
+      </p>
+    </div>
+  `
+  
+  document.body.innerHTML = markup;
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
