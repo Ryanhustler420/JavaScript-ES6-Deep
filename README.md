@@ -748,7 +748,31 @@ document.body.innerHTML = markup;
 
 ```
 
+## Tagged Template Literals as function
 
+
+```javaScript
+  
+  // strings array will be one larger than values array
+  
+  function highlight(strings, ...values){
+    // debugger;
+    let str = '';
+    strings.forEach((string, i) => {
+      // str += string + (values[i] || '');
+      str += `${string} <span class="h1" contenteditable >${values[i] || ''}</span>`;
+    });
+    return str;
+  }
+  
+  const name = "Snickers";
+  const age = 100;
+  
+  const sentence = highlight` My gog's name is ${name} and he is ${age} years old `;
+  console.log(sentence);
+  document.body.innerHTML = sentence;
+  
+```
 
 
 
