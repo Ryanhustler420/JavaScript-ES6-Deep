@@ -774,6 +774,35 @@ document.body.innerHTML = markup;
   
 ```
 
+## Tagged Template Literals as Excersice
+
+```javaScript
+
+const dict = {
+    HTML: "Hyper Text Markup Language",
+    CSS: "Cascading Style Sheets",
+    JS: "JavaScript"
+};
+
+function addAbbreviations(strings, ...values) {
+    const abbreviated = values.map(v => {
+        if(dict[v]){
+            return `<abbr title="${dict[v]}">${v}</abbr>`
+        }
+        return v;
+    })
+    // console.log(abbreviated);
+    return strings.reduce((sentence, string, i) => {
+        return `${sentence}${string}${abbreviated[i] || ''}`
+    }, '');
+}
+
+const first = 'Gaurav'
+const last = 'Gupta'
+
+const sentence = addAbbreviations`Hello my name is ${first} ${last} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'} `
+
+```
 
 
 
