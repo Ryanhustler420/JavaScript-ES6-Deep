@@ -804,7 +804,30 @@ const sentence = addAbbreviations`Hello my name is ${first} ${last} and I love t
 
 ```
 
+## Santizing User Data with Tagged Templates
 
+```javaScript
+function santize(string, ...values) {
+    const dirty = string
+        .reduce((prev, next, i) => `${prev}${next}${values[i] ||
+             ''}`, '');
+    return DOMPurify.sanitize(dirty); // its a library check out.
+}
+
+const firstName = 'Gaurav';
+const aboutMe = santize`I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
+
+const html = `
+    <h3>${firstName}</h3>
+    <p>${aboutMe}</p>
+`;
+
+const bio = document.querySelector('.bio');
+bio.innerHTML = html;
+
+bio; /*? */
+
+```
 
 
 
