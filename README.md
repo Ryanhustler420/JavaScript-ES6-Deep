@@ -829,10 +829,43 @@ bio; /*? */
 
 ```
 
+## New String Methods
 
+```javaScript
 
+  const course = 'RFB2';
+  const flightNumber = '20-AC2018-jz';
+  const accountNumber = '825242631RT0001';
 
+  const make = 'BMW';
+  const model = 'x5';
+  const colour = 'Royal Blue';
 
+  // .startsWith()
+
+  course.startsWith('RFB'); /*? */
+  flightNumber.startsWith('AC', 3); /*? */
+
+  // .endsWith()
+
+  flightNumber.endsWith('jz'); /*? */
+  accountNumber.endsWith('RT', 11); /*? */
+
+  // .includes()
+
+  flightNumber.includes('AC'); /*? */
+
+  // .repeat()
+
+  function leftPad(str, length = 20) {
+      return `-> ${' '.repeat(length - str.length)}${str}`;
+  }
+
+  console.log(leftPad('BMW'))
+  console.log(leftPad('X5'))
+  console.log(leftPad('Royal Blue'))
+
+```
 
 
 
