@@ -866,7 +866,49 @@ bio; /*? */
   console.log(leftPad('Royal Blue'))
 
 ```
+## Destructuring Objects
 
+```javaScript
+const person = {
+    first: 'Gaurav',
+    last: 'Gupta',
+    country: 'India',
+    city: 'Delhi',
+    fb: 'gouravkiller876@gmail.com'
+};
+
+const {first , last} = person;
+
+first;
+
+const Gaurav = {
+    first: 'Gaurav',
+    last: 'Gupta',
+    links: {
+        social: {
+            fb: 'https://facebook.com/gauravgupta',
+            gm: 'https://gmail.com/v1/u/gouravgupta'
+        },
+        web: {
+            blog: 'https://medium.com/user/gauravgupta'
+        }
+    }
+}
+
+const { fb: facebook, gm: gmail } = Gaurav.links.social;
+facebook;
+
+const settings = {width: 300, color: 'black'} //height, fontSize
+// const {width, height, color, fontSize} = settings;
+// const {width = 100, height = 100, color = 'blue', fontSize = 25} = settings;
+// height;
+
+// Some Concreate Example
+
+const {w: width = 400, h: height = 500} = {w: 800};
+height; /*? */
+
+```
 
 
 
