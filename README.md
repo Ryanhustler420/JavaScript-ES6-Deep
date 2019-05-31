@@ -951,5 +951,44 @@ onSide;
 
 ```
 
+## Destructuring Functions - Multiple returns and named defaults
 
+```javaScript
+
+function convertCurrency(amount) {
+    const converted = {
+        USD: amount * 0.76,
+        GPB: amount * 0.53,
+        AUD: amount * 1.01,
+        MEX: amount * 13.30,
+    };
+    return converted;
+}
+
+const hundo = convertCurrency(100);
+
+console.log(hundo.AUD);
+console.log(hundo.MEX);
+
+const {USD, GPB, AUD: Austrilian = 100, MEX, I = 500} = convertCurrency(100);
+USD;
+I;
+Austrilian;
+
+
+function tipCalc({total, tip = .15, tax = 0.13} = {}) {
+    return total + (tip * total) + (tax * total);
+}
+
+const bill = tipCalc({total: 200, tip: .2, tax: .13});
+console.log(bill);
+
+const bill2 = tipCalc({tax: .13, total: 200});
+console.log(bill2);
+
+const bill3 = tipCalc();
+console.log(bill3);
+
+
+```
 
