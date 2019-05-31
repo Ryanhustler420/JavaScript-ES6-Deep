@@ -910,8 +910,29 @@ height; /*? */
 
 ```
 
+## Destructing Arrays
 
+```javaScript
 
+const details = ['Gaurav Gupta', 123, 'goonsroom.com'];
+const [name, id, website] = details;
+
+name;
+id;
+website;
+
+const data = 'Basketball,Sport,90210,23';
+let [itemName, category, sku, inventory] = data.split(',');
+
+itemName;
+category;
+
+const data2 = 'Basketball,Sport,90210,23,Gaurav,Gupta,Cool';
+[itemName, category,sku, inventory,...rest] = data2.split(',');
+itemName;
+rest;
+
+```
 
 
 
