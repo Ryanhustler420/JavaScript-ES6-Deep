@@ -934,5 +934,22 @@ rest;
 
 ```
 
+## Swapping Variables with Destructuring
+
+```javaScript
+
+let inRing = 'Hulk Hogan';
+let onSide = 'The Rock';
+
+inRing;
+onSide;
+
+[inRing, onSide] = [onSide, inRing];
+
+inRing;
+onSide;
+
+```
+
 
 
