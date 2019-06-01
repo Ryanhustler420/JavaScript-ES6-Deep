@@ -992,3 +992,63 @@ console.log(bill3);
 
 ```
 
+## The for of Loop in Action
+
+```javaScript
+
+const cuts = ['Chuck','Brisket','Shank','Short Rib'];
+
+for(const cut of cuts) {
+    console.log(cut);
+}
+
+cuts.entries(); /*? */
+
+const meat = cuts.entries();
+
+meat.next(); /*? */
+meat.next(); /*? */
+meat.next(); /*? */
+    
+for(const [i, cut] of cuts.entries()) {
+    console.log(`${cut} is the ${i} item`);
+}
+
+function addUpNumbers() {
+    console.log(arguments);
+    let total = 0;
+    for (const num of arguments) {
+        total += num;
+    }
+    console.log(total);
+    return total;
+}
+
+addUpNumbers(10,23,52,34,12,13,123); /*? */
+
+function best(i,o,j){
+    console.log(...arguments);
+}
+
+best(1,2,[3]);
+
+const name = 'Gaurav';
+
+for (const char of name) {
+    console.log(char);
+}
+
+
+const ps = document.querySelectorAll('p');
+console.log(ps);
+for (const paragraph of ps) {
+    paragraph.addEventListener('click', function() {
+        console.log(this.textContent);
+    })
+}
+
+
+```
+
+
+
