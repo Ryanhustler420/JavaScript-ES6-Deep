@@ -1076,5 +1076,28 @@ for (const cut of cuts) {
 
 ```
 
+## Using for in with Objects
+
+```javaScript
+
+const apple = {
+    color: 'Red',
+    size: 'Medium',
+    weight: 50,
+    suger: 10,
+}
+
+// for (const prop of apple.entries()) {
+//     console.log(prop);
+// }
+
+for (const prop in apple) {
+    if (apple.hasOwnProperty(prop)) {
+        console.log(apple[prop]);        
+    }
+}
+
+```
+
 
 
