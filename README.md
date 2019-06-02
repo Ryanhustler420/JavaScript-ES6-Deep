@@ -1050,5 +1050,31 @@ for (const paragraph of ps) {
 
 ```
 
+## The for of loop
+
+```javaScript
+
+const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
+
+Array.prototype.chunk = function(index) {
+    this[index] = this[index].toUpperCase();
+}
+
+cuts.shop = 'hello'
+
+for (const key in cuts) {
+    // prints every thing even prototype methods as well
+    console.log(key); /* 0, 1, 2, 3, shop, chunk */
+}
+
+for (const cut of cuts) {
+    if(cut === 'Brisket') {
+        continue;
+    }
+    console.log(cut); // Chunk, Shank, Short Rib
+}
+
+```
+
 
 
