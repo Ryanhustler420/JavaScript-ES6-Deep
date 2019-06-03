@@ -1099,5 +1099,31 @@ for (const prop in apple) {
 
 ```
 
+## Array.from() and Array.of()
 
+```javaScript
+
+const name = 'Gaurav'; // somthing arraies types || NodeList from DOM
+const char = Array.from(name);
+const t = char.map(e => e.toUpperCase());
+t;
+
+const name2 = 'Saurav';
+Array.from(name2,(e) => {
+    console.log(e.toUpperCase());
+})
+
+function sumAll(a) {
+    [...arguments] /*? [2,5] */;
+    const args = Array.from(arguments);
+    return args.reduce((a,c) => a+c,0);
+}
+
+sumAll(2,5); /*? */
+
+const ages = Array.of(12,4,23,56,23);
+console.log(ages);
+
+
+```
 
