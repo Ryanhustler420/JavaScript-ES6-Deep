@@ -1127,3 +1127,69 @@ console.log(ages);
 
 ```
 
+## Array. find() and .findIndex()
+
+```javaScript
+
+const products = [
+    {
+        "_id" : ("5b2d38217d75e2cdcb31cf05"),
+        "sold" : 15,
+        "name" : "JEM UV7",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "price" : 3500,
+        "brand" : ("5b2c11d2d37177aedfd6d962"),
+        "shipping" : true,
+        "available" : false,
+        "wood" : ("5b2c1c81255983b4795f8fda"),
+        "frets" : 22,
+        "publish" : true,
+        "createdAt" : ("2018-06-22T17:55:45.880Z"),
+        "updatedAt" : ("2018-06-22T17:55:45.880Z"),
+        "__v" : 0
+    },
+    {
+        "_id" : ("5b2d384b7d75e2cdcb31cf06"),
+        "sold" : 0,
+        "name" : "TELE-ub23",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "price" : 600,
+        "brand" : ("5b2c11481470fbaecd159dfd"),
+        "shipping" : false,
+        "available" : false,
+        "wood" : ("5b2c1c0981e781b44909627d"),
+        "frets" : 22,
+        "publish" : true,
+        "createdAt" : ("2018-06-22T17:56:27.270Z"),
+        "updatedAt" : ("2018-06-22T17:56:27.270Z"),
+        "__v" : 0
+    },
+    {
+        "_id" : "5b2d390d7d75e2cdcb31cf07",
+        "sold" : 9,
+        "name" : "FR7",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "price" : 1300,
+        "brand" : ("5b2c12a4d37177aedfd6d967"),
+        "shipping" : false,
+        "available" : true,
+        "wood" : ("5b2c1c81255983b4795f8fda"),
+        "frets" : 24,
+        "publish" : true,
+        "createdAt" : ("2018-06-22T17:59:41.868Z"),
+        "updatedAt" : ("2018-06-22T17:59:41.868Z"),
+        "__v" : 0,
+    }
+]
+
+products[1]; /*? */
+
+let product = products.find(p => p._id === '5b2d390d7d75e2cdcb31cf07');
+
+product;
+
+product = products.findIndex(p => p._id === '5b2d390d7d75e2cdcb31cf07');
+
+product;
+
+```
