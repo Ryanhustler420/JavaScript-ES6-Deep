@@ -1193,3 +1193,19 @@ product = products.findIndex(p => p._id === '5b2d390d7d75e2cdcb31cf07');
 product;
 
 ```
+
+## Array .some() and .every()
+
+```javaScript
+
+const ages = [32,15,19,12];
+
+// is there at least one adult yn the group?
+const adultPresent = ages.some(age => age >= 18);
+adultPresent;
+
+// is everyone old enough to drink?
+const allOldEnought = ages.every(a => a >= 19);
+allOldEnought;
+
+```
