@@ -1235,3 +1235,53 @@ pizza;
 fridayPizzas;
 
 ```
+
+## More Spread Examples
+
+```javaScript
+
+const str = 'SPREADS!';
+const tagsChild = [...str].map(t => (
+    `<span>${t}</span>`
+)).join(" "); /*? */
+
+tagsChild; /*? */
+
+
+// A NodeList iS An Itereable So We Can Use Spread Operator
+
+const people = [...document.querySelector('.people p')];
+const names = people.map((p) => {
+    return p.textContent
+});
+
+const deepDish = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredients: ['Marinara','Italian Sausage', 'Dough', 'Cheese']
+}
+
+const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
+shoppingList;
+
+const comments = [
+    {id: 209384, text: 'I love your dog!'},
+    {id: 523423, text: 'Cuuute! DOG'},
+    {id: 632419, text: 'You are so dumb!'},
+    {id: 192834, text: 'Nice work on this wes!'},
+    {id: 192835, text: 'Cool Post Thanks For Sharing!'},
+];
+
+const id = 632419;
+
+const commentIndex = comments.findIndex(c => c.id === id);
+commentIndex;
+
+const newComments =[...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
+newComments;
+
+this.setState({
+    comments: newComments
+})
+
+```
