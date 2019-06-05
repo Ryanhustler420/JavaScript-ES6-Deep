@@ -1209,3 +1209,29 @@ const allOldEnought = ages.every(a => a >= 19);
 allOldEnought;
 
 ```
+
+## Spread Operator Introduction
+
+```javaScript
+
+const featured = ['Deep Dish', 'Peperoni', 'Hawaiian'];
+const specialty = ['Meatzza', 'Spicy Mama', 'Margherita']
+
+const deepDish = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+};
+
+let pizza = featured.concat(specialty);
+pizza;
+
+pizza = [...featured, 'Veg' ,...specialty];
+pizza;
+
+const fridayPizzas = [...pizza];
+fridayPizzas[0] = 'Changed';
+pizza;
+fridayPizzas;
+
+```
