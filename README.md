@@ -1285,3 +1285,46 @@ this.setState({
 })
 
 ```
+
+## Spreading into a function
+
+```javaScript
+
+const inverstor = ['Einstein','Newton','Galileo'];
+const newInvestors = ['Musk','Jobs','jonny'];
+const scientist = ['Gaurav','Saurav','Vinod','Jack','Mac','Ruby','Ala'];
+
+function combine(arr1, arr2){
+    arr1;
+    return [...arr1, ...arr2];
+}
+
+function combine(){
+    let data = [];
+    return [...arguments].reduce((acc, curr) => {
+        acc.push(...curr);
+        return acc;
+    }, data);  /*? */
+}
+
+combine(inverstor, newInvestors, scientist); /*? */
+
+const name = ['Gaurav','Gupta'];
+
+function sayHi (first, last) {
+    console.log(`Hey there! ${first} ${last}`)
+}
+
+sayHi(...name);
+
+function sayHi () {
+    const [o,p] = [...arguments];
+    console.log(`Hey there! ${o} ${p}`)
+}
+
+
+inverstor.push.apply(inverstor, newInvestors); // 6
+
+
+
+```
