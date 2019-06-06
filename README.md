@@ -1325,6 +1325,56 @@ function sayHi () {
 
 inverstor.push.apply(inverstor, newInvestors); // 6
 
+```
+
+## The ...rest param in Functions and destructuring
+
+```js
+// The ...Rest Params Looks Exactly The Same But Works Differently
+
+// PRACTICE CODE
+
+function greet(...rest) {
+    return [...arguments].map(e => {
+        console.log(e);
+        return e;
+    })
+}
+
+const map = array => fn => array.map(fn);
+
+const multiply = (a) => {
+    return a * 2; 
+}
+
+map([1,2,3,4,6])(multiply); /*? */
+
+greet([1,2,3,4,6]).forEach(e => {
+    console.log(e)
+});
+
+// ******************************************** //
+
+
+function convertCurrency(rate, tax, tip, ...amounts) {
+    console.log({rate, tax, tip}, amounts);
+    return amounts.map(amt => amt * rate);
+}
+
+convertCurrency(1.54, 10, 23, 52, 1, 56); /*? */
+
+const runner = ['Gaurav Gupta', 123, 5.5, 5, 3, 6, 35];
+const [name, id, ...runs] = runner;
+name;
+id;
+runs;
+
+const team = ['Gaurav', 'Saurav', 'Mogli', 'Sheena', 'Kelly'];
+
+const [captian, assistant, ...players] = team;
+captian;
+assistant;
+players;
 
 
 ```
