@@ -1455,3 +1455,43 @@ p.then(data => {
 });
 
 ```
+
+## Symbols
+
+```js
+
+const gaurav = Symbol('Gaurav');
+gaurav; // Symbol(Gaurav)
+const person = Symbol('Gaurav');
+person; // Symbol(Gaurav)
+
+
+// If You Dont Wanna Iterate Data or Create An Object For Unique Properties
+// User Symbol()
+
+const classRoom = {
+    [Symbol('Mark')] : { grade: 50, gender: 'male'},
+    [Symbol('Olivia')] : { grade: 80, gender: 'female'},
+    [Symbol('Olivia')] : { grade: 80, gender: 'female'},
+    *[Symbol.iterator] () {
+        yield 1;
+        yield 1;
+    }
+}
+
+console.log(...classRoom);
+
+// wont work
+for (const key in classRoom) {
+    console.log(key);
+}
+
+const syms = Object.getOwnPropertySymbols(classRoom);
+console.log(syms);
+
+const data = syms.map(sym => classRoom[sym]);
+data;
+
+
+```
+
