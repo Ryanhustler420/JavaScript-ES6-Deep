@@ -1438,3 +1438,20 @@ shirt;
 
 
 ```
+
+## Promises
+
+```js
+const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject(new Error('Gaurav Gupta is Baniya'));
+    }, 1000);
+});
+
+p.then(data => {
+    console.log(data)
+}).catch(err => {
+    console.log(err) 
+});
+
+```
