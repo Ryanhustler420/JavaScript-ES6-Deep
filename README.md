@@ -1495,3 +1495,46 @@ data;
 
 ```
 
+## Generators
+
+```js
+
+function* listPeople() {
+    let i = 0;
+    yield i;
+    i++;
+    yield i;
+    i++;
+    yield i;
+}
+
+const people = listPeople();
+
+people.next() /*? */
+people.next() /*? */
+people.next() /*? */
+people.next() /*? */
+
+const inventors = [
+    {first: 'Albert', last: 'Enstian', year: 1891},
+    {first: 'Issac', last: 'Newton', year: 1643},
+    {first: 'Marie', last: 'Curie', year: 1867},
+    {first: 'Johannes', last: 'Kepler', year: 1571},
+]
+
+function* loop(arr) {
+    for (const item of arr) {
+        yield item;
+    }
+    return; // done here
+}
+
+const itr = loop(inventors);
+
+itr.next().value; /*? */
+itr.next().value; /*? */
+itr.next().value; /*? */
+itr.next().value; /*? */
+itr.next(); /*? */
+
+```
