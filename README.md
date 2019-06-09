@@ -1538,3 +1538,41 @@ itr.next().value; /*? */
 itr.next(); /*? */
 
 ```
+
+## Using Generators for Ajax Flow Control
+
+```js
+
+// Generator for async request
+
+function ajex(url) {
+    new Promise((resolve, reject) => {
+        resolve({
+            done: true,
+            url
+        })
+    }).then(data => {
+        request.next(data)
+    })
+}
+
+
+function* steps() {
+    console.log('fetching beers');
+    const beers = yield ajex('http://api.react.beer/v2/search?q=hops&type=beer');
+    console.log(beers);
+
+    console.log('fetching gaurav');
+    const gaurav = yield ajex('http://api.github.io/users/gauravgupta');
+    console.log(gaurav)
+
+    console.log('fetching fatJoe');
+    const fatJoe = yield ajex('https://api.discogs.com/artists/51988');
+    console.log(fatJoe);
+}
+
+const request = steps();
+
+request.next(); /*? */ //kick it off
+
+```
