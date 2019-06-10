@@ -1814,3 +1814,28 @@ const map = {
 // }
 
 ```
+## Map Metadata with DOM Node Keys
+
+```js
+
+{/* 
+    <button>Cry</button>
+    <button>Ice Cream</button>
+    <button>Flamin'</button>
+    <button>Dancer</button> 
+*/}
+
+const clickCount = new Map();
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    clickCount.set(button, 0);
+    button.addEventListener('click', function() {
+        const val = clickCount.get(this);
+        clickCount.set(this, val + 1);
+        console.log(clickCount);
+    })
+})
+
+
+```
