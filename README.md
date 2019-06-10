@@ -1673,3 +1673,54 @@ safty.id = 200;
 safty.Id = 200;
 
 ```
+
+## Sets
+
+
+```js
+
+const people = new Set();
+people.add('Gaurav');
+people.add('Gupta');
+people.add('Saurav');
+people.add('Gupta');
+
+people;
+
+people.delete('Gaurav');
+people;
+
+people.clear();
+people;
+
+people.add('Gaurav');
+people.add('Gupta');
+people.add('Saurav');
+people.add('Gupta');
+
+const it = people.values(); /*? */
+it.next(); /*? */
+it.next(); /*? */
+
+for (const iterator of people) {
+    console.log(iterator)
+}
+
+// people.keys() as same as people.values(); /*? */
+
+people.entries(); /*? */
+
+
+const student = new Set(['Gaurav', 'Saurav', "Gaurav", 'Kara', 'Tony']);
+student;
+
+const dogs = ['Snickers', 'Sunny'];
+const dogSet = new Set(dogs);
+
+dogSet;
+
+student.has('Gaurav'); /*? */
+
+student[1]; /*? wrong  ✗ */
+
+```
