@@ -1839,3 +1839,23 @@ buttons.forEach(button => {
 
 
 ```
+
+## WeakMap and Garbage Collection
+
+```js
+
+let dog1 = {name: 'Snickers'};
+let dog2 = {name: 'Sunny'};
+
+const strong = new Map();
+const weak = new WeakMap();
+
+strong.set(dog1, 'Snickers is the best!');
+// weakMap will remove the object which no longer there in your application
+// while Map Keeps the Object and that cause memory leaks
+weak.set(dog2, 'Sunny is the Awesome one!');
+
+dog1 = null;
+dog2 = null;
+
+```
