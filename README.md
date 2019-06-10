@@ -1628,3 +1628,26 @@ personProxy.cool; /*? */
 
 
 ```
+
+## Another Proxy Example
+
+```js
+
+const phoneHandler = {
+    set(target, name, value) {
+        target[name] = value.match(/[0-9]/g).join('');
+    },
+    get(target, name) {
+        return target[name].replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3');
+    }
+}
+
+const phoneNumber = new Proxy({}, phoneHandler);
+
+phoneNumber.home = "(234) 234 2343";
+phoneNumber.work = "+134 -234-2343";
+
+phoneNumber.home; /*? */
+phoneNumber.work; /*? */
+
+```
