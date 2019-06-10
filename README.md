@@ -1750,3 +1750,31 @@ console.log(line.next())
 console.log(line.next())
 
 ```
+## WeakSets
+
+```js
+
+let dog1 = {name: 'Snickers', age: 3};
+let dog2 = {name: 'sunny', age: 1};
+
+const weakSause = new WeakSet([dog1, dog2]);
+// weakSause.add(dog1)
+
+// always containt an Object
+weakSause;
+
+// Can't Loop
+
+// for (const dog of weakSause) {
+//     console.log(dog)
+// }
+
+
+// It will Call Grabage Collector Behind The Scene.
+// Usefull when you use object and delete any time
+console.log(weakSause)
+dog1 = null;
+console.log(weakSause)
+
+
+```
