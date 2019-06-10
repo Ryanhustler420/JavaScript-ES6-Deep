@@ -1724,3 +1724,29 @@ student.has('Gaurav'); /*? */
 student[1]; /*? wrong  ✗ */
 
 ```
+## Sets with Brunch Example
+
+```js
+
+const brunch = new Set();
+
+// as people start coming in
+brunch.add('Gaurav');
+brunch.add('Saurav');
+brunch.add('Sara');
+
+// ready to open!
+
+const line = brunch.values();
+console.log(line.next())
+// line items will remove after each next() call
+console.log(line.next())
+console.log(line.next())
+
+brunch.add('Hether');
+brunch.add('Snickers');
+
+console.log(line.next())
+console.log(line.next())
+
+```
