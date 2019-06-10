@@ -1597,3 +1597,34 @@ for (const line of achy) {
 }
 
 ```
+
+## Proxies
+
+```js
+
+const person = {
+    name: 'Gaurav',
+    age: 100
+}
+
+const personProxy = new Proxy(person, {
+    get(target, name) {
+        console.log(`someone is asking for
+        ${target} ${name}`);
+        return target[name].toUpperCase();
+    },
+    set(target, name, value) {
+        if(typeof value === 'string'){
+            target[name] = value.trim();
+        }
+    }
+})
+
+personProxy.name; /*? */
+
+personProxy.cool = "           best                ";
+
+personProxy.cool; /*? */
+
+
+```
