@@ -1778,3 +1778,39 @@ console.log(weakSause)
 
 
 ```
+
+## Maps
+
+```js
+
+// Sets are for arrays
+// While Map are for object
+
+const dogs = new Map();
+
+dogs.set('Snickers', 3);
+dogs.set('Sunny', 3);
+dogs.set('Hugo', 3);
+
+dogs;
+dogs.has('Snickers'); /*? */
+dogs.get('Snickers'); /*? */
+
+dogs.forEach((val, _) => console.log(val, _));
+
+for (const [key, val] of dogs) {
+    console.log(key, val);
+}
+
+
+const map = {
+    name: "Gaurav"
+}
+
+// This will not work
+
+// for (const _ of map) {
+//     console.log(_);
+// }
+
+```
