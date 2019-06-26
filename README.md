@@ -1859,3 +1859,35 @@ dog1 = null;
 dog2 = null;
 
 ```
+
+## Handler hack
+
+```js
+
+const fileServer = setUpStorage('kdjhsfaklgklhuwe135654sdfasdf:url545','http://cloudnairy.com/gouravgupta/images', {
+    ['cloulnary'](imagesLink, path) {
+       console.log(imagesLink) 
+       console.log(path) 
+    },
+    ['monkey'](imagesLink, path) {
+       console.log(imagesLink) 
+       console.log(path) 
+    },
+}, (done) => {
+    done();
+})
+
+function setUpStorage(api, url, handler ,cb) {
+    // MAKE REQUEST TO URL ALONG WITH API KEY
+    return cb(() => {
+        switch('monkey'){
+            case 'cloulnary':
+                return handler['cloulnary']('ppurnj322.png', 'http://cloudnary/gouravgupta/images/ppurnj322.png')
+            default:
+                return handler['monkey']('ppurnj322.png', 'http://cloudnary/gouravgupta/images/ppurnj322.png')
+        }
+    });
+}
+
+
+```
